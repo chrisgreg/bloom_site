@@ -9,7 +9,14 @@ defmodule BloomSite.MixProject do
       elixirc_paths: elixirc_paths(Mix.env()),
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
-      deps: deps()
+      deps: deps(),
+      releases: [
+        bloom_site: [
+          strip_beams: [
+            false
+          ]
+        ]
+      ]
     ]
   end
 
@@ -47,7 +54,7 @@ defmodule BloomSite.MixProject do
       {:gettext, "~> 0.20"},
       {:jason, "~> 1.2"},
       {:plug_cowboy, "~> 2.5"},
-      {:bloom, path: "../bloom"},
+      {:bloom, "~> 0.0.3"},
       {:phoenix_storybook, "~> 0.6.0"}
     ]
   end

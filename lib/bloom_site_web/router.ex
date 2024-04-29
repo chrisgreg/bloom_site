@@ -1,6 +1,5 @@
 defmodule BloomSiteWeb.Router do
   use BloomSiteWeb, :router
-  use Elixir.BloomSiteWeb, :router
   import PhoenixStorybook.Router
 
   pipeline :browser do
