@@ -3,7 +3,7 @@ defmodule Storybook.MyPage do
   # documentation.
   use PhoenixStorybook.Story, :page
 
-  def doc, do: "Your very first steps into using Phoenix Storybook"
+  def doc, do: "How to get started with Bloom"
 
   # Declare an optional tab-based navigation in your page:
   def navigation do
@@ -20,26 +20,35 @@ defmodule Storybook.MyPage do
     ~H"""
     <div class="psb-welcome-page">
       <p>
-        We generated your storybook with an example of a page and a component.
-        Explore the generated <code class="psb-inline">*.story.exs</code>
-        files in your <code class="inline">/storybook</code>
-        directory. When you're ready to add your own, just drop your new story & index files into the same directory and refresh your storybook.
+        Head over to the Github page for more information.
+        <strong>
+          <a href="https://github.com/chrisgreg/bloom" target="_blank">
+            See github
+          </a>
+        </strong>
+        for the full installation guide.
       </p>
 
-      <p>
-        Here are a few docs you might be interested in:
-      </p>
-
-      <.description_list items={[
-        {"Create a new Story", doc_link("Story")},
-        {"Display components using Variations", doc_link("Stories.Variation")},
-        {"Group components using VariationGroups", doc_link("Stories.VariationGroup")},
-        {"Organize the sidebar with Index files", doc_link("Index")}
-      ]} />
-
-      <p>
-        This should be enough to get you started, but you can use the tabs in the upper-right corner of this page to <strong>check out advanced usage guides</strong>.
-      </p>
+      <div>
+        <h2>Installation</h2>
+        <p>Can be installed by adding bloom to your list of dependencies in mix.exs:</p>
+        <pre><code>def deps do
+        [
+          {:bloom, "~> 0.0.2"}
+        ]
+      end</code></pre>
+        <p>Relies on Phoenix being installed.</p>
+        <h2>Installing components</h2>
+        <p>
+          All components can be installed by running the following mix command in your project root:
+        </p>
+        <pre><code>mix bloom.install &lt;component_name&gt;</code></pre>
+        <p>
+          Some components require Tailwind Config changes - refer to the component doc for more information.
+        </p>
+        <p>View all components by running:</p>
+        <pre><code>mix bloom.install help</code></pre>
+      </div>
     </div>
     """
   end
