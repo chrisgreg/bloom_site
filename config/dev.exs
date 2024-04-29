@@ -16,7 +16,8 @@ config :bloom_site, BloomSiteWeb.Endpoint,
   secret_key_base: "EHb5HZzPUHQ44eRQSLktxFQ7jqY01qZMgkqPA/QdG+1DSUwrjxtELv+H8fsabAWo",
   watchers: [
     esbuild: {Esbuild, :install_and_run, [:default, ~w(--sourcemap=inline --watch)]},
-    tailwind: {Tailwind, :install_and_run, [:default, ~w(--watch)]}
+    tailwind: {Tailwind, :install_and_run, [:default, ~w(--watch)]},
+    storybook_tailwind: {Tailwind, :install_and_run, [:storybook, ~w(--watch)]}
   ]
 
 # ## SSL Support
@@ -48,7 +49,8 @@ config :bloom_site, BloomSiteWeb.Endpoint,
     patterns: [
       ~r"priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$",
       ~r"priv/gettext/.*(po)$",
-      ~r"lib/bloom_site_web/(controllers|live|components)/.*(ex|heex)$"
+      ~r"lib/bloom_site_web/(controllers|live|components)/.*(ex|heex)$",
+      ~r"storybook/.*(exs)$"
     ]
   ]
 

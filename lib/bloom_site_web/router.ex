@@ -1,5 +1,7 @@
 defmodule BloomSiteWeb.Router do
   use BloomSiteWeb, :router
+  use Elixir.BloomSiteWeb, :router
+  import PhoenixStorybook.Router
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -14,10 +16,15 @@ defmodule BloomSiteWeb.Router do
     plug :accepts, ["json"]
   end
 
+  scope "/" do
+    storybook_assets()
+  end
+
   scope "/", BloomSiteWeb do
     pipe_through :browser
 
     live "/", LandingLive, :home
+    live_storybook("/storybook", backend_module: Elixir.BloomSiteWeb.Storybook)
   end
 
   # Other scopes may use custom stacks.
