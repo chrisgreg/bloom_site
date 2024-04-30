@@ -34,6 +34,12 @@ module.exports = {
       pattern: /transition-+/,
       variants: ["focus", "hover", "group-hover", "active"],
     },
+    {
+      pattern: /col-+/,
+    },
+    {
+      pattern: /row-+/,
+    },
   ],
   theme: {
     extend: {

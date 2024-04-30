@@ -4,6 +4,7 @@ defmodule BloomSiteWeb.LandingLive do
   import BloomSiteWeb.Components.CodeSnippet
   import BloomSiteWeb.Components.GradientText
   import BloomSiteWeb.Components.Hero
+  import BloomSiteWeb.Components.BentoGrid
 
   def mount(_params, _session, socket) do
     {:ok, socket}
