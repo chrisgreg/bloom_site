@@ -1,6 +1,11 @@
 defmodule BloomSiteWeb.Components.Card do
   use Phoenix.Component
 
+  attr(:title, :string, doc: "Card title")
+  attr(:subheading, :string, doc: "Card subheading")
+  attr(:body, :string, doc: "Card body")
+  attr(:image, :string, doc: "Card image", required: false)
+
   def card(assigns) do
     ~H"""
     <figure class={[
@@ -9,12 +14,12 @@ defmodule BloomSiteWeb.Components.Card do
       "dark:border-gray-50 dark:bg-gray-50 dark:hover:bg-gray-50"
     ]}>
       <div class="flex flex-row items-center gap-2">
-        <img class="rounded-full" width="32" height="32" alt="" src="https://picsum.photos/64" />
+        <img :if={assigns[:image]} class="rounded-full" width="32" height="32" alt="" src={@image} />
         <div class="flex flex-col">
           <figcaption class="text-sm font-medium dark:text-white">
-            <%= @name %>
+            <%= @title %>
           </figcaption>
-          <p class="text-xs font-medium dark:text-white"><%= @username %></p>
+          <p class="text-xs font-medium dark:text-white"><%= @subheading %></p>
         </div>
       </div>
       <blockquote class="mt-2 text-sm"><%= @body %></blockquote>
