@@ -40,6 +40,9 @@ module.exports = {
     {
       pattern: /row-+/,
     },
+    {
+      pattern: /animation-direction-+/,
+    },
   ],
   theme: {
     extend: {
@@ -48,12 +51,22 @@ module.exports = {
       },
       animation: {
         tilt: "tilt 5s ease-in-out infinite",
+        marquee: "marquee 20s linear infinite",
+        "marquee-vertical": "marquee-vertical 20s linear infinite",
       },
       keyframes: {
         tilt: {
           "0%, 50%, 100%": { transform: "rotate(0deg)" },
           "25%": { transform: "rotate(6deg)" },
           "75%": { transform: "rotate(-6deg)" },
+        },
+        marquee: {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(calc(-100% - var(--gap)))" },
+        },
+        "marquee-vertical": {
+          from: { transform: "translateY(0)" },
+          to: { transform: "translateY(calc(-100% - var(--gap)))" },
         },
       },
     },
